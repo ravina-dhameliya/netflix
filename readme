@@ -1,0 +1,4 @@
+#Test first in local environment
+
+docker build --build-arg TMDB_V3_API_KEY=957c8ceced7b2c2f870ee339d7e0ad43 -t netflix-demo1 .
+docker run --name netflix-clone-website --rm -d -p 80:80 netflix-demo1
