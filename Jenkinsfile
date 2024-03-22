@@ -32,6 +32,7 @@ pipeline {
             steps {
                 script {
                     sh "aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 465764343565.dkr.ecr.eu-west-2.amazonaws.com"
+                    sh "aws eks update-kubeconfig --region eu-west-2 --name darshan-kachhia"
                     sh "docker tag netflix:latest 465764343565.dkr.ecr.eu-west-2.amazonaws.com/netflix:latest"
                     sh "docker push 465764343565.dkr.ecr.eu-west-2.amazonaws.com/netflix:latest"
                 }
